@@ -47,7 +47,6 @@ def printVal():
 # # k=20
 # printall(c=30,b=20,a=10)
 
-
 # def sumList(a):
 #     print(a)
 #     s=0
