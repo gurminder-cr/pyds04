@@ -5,8 +5,8 @@ import os
 
 SMTP_HOST = "smtpout.secureserver.net"
 SMTP_PORT = 465  # use 587 if 465 is blocked
-SENDER_EMAIL = "hr@jyotishmentor.com"
-SENDER_PASSWORD = "hr@Jyotish2026"  # never hardcode this
+SENDER_EMAIL = ""
+SENDER_PASSWORD = ""  # never hardcode this
 
 def send_mail(to_email, subject, body):
     msg = MIMEMultipart()
