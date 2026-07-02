@@ -10,7 +10,6 @@ prompt= ChatPromptTemplate.from_template(
 )
 
 chain= prompt | llm 
-
 st.header("langchain Ollama chat")
 
 text= st.text_input('Enter Question here..')
@@ -19,3 +18,6 @@ if text:
     'topic':{text}
     }) 
     st.write(response.content)
+    
+# ChatPromptTemplate.from_messages
+
