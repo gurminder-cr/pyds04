@@ -58,6 +58,10 @@ def currency_converter(query: str) -> str:
 
         converted = amount * rate
 
+        print(
+            f"{amount} {from_currency} = "
+            f"{converted:.2f} {to_currency}"
+        )
         return (
             f"{amount} {from_currency} = "
             f"{converted:.2f} {to_currency}"
@@ -72,7 +76,7 @@ tools = [
     currency_converter
 ]
 
-llm= ChatOllama(model='llama2:latest')
+llm= ChatOllama(model='llama3.2:1b')
 llm_with_tools = llm.bind_tools(tools)
 
 # creating a agent loop 
@@ -95,7 +99,7 @@ def run_assistant(user_query):
 
         selected_tool = next(
             tool for tool in tools
-            if tool==tool_name
+            if tool.name==tool_name
             )
         # get_weather
         
