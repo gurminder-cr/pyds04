@@ -8,7 +8,7 @@ docs=[
     "he is the student of DAV university"
 ]
 # model_embedding= OllamaEmbeddings(model="nomic-embed-text:latest")
-model_embedding= OllamaEmbeddings(model="qwen3-embedding:0.6b")
+
 
 # single query -> vector embedding
 
