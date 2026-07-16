@@ -43,8 +43,11 @@ def chunk_documents(documents,chunk_size, chunk_overlap):
     return chunks
     
 def create_vector(chunks, directory):
-    embedder= OllamaEmbeddings(model="qwen3-embedding:0.6b")
-    
+    # embedder= OllamaEmbeddings(model="qwen3-embedding:0.6b")
+    embedder=HuggingFaceEmbeddings(
+        model_name="sentence-transformers/all-MiniLM-L6-v2",
+        encode_kwargs={"normalize_embeddings": True}
+    )
     print("-----Creating Vector on the given path----")
     vectors= Chroma.from_documents(chunks, embedder, persist_directory=directory) 
     
@@ -55,5 +58,3 @@ if __name__=="__main__":
     d= load_documents(doc_path=doc_path)
     chunks= chunk_documents(d,chunk_size=800, chunk_overlap=100)
     vector= create_vector(chunks=chunks, directory=directory)
-    
-    

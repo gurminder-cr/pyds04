@@ -32,7 +32,7 @@ pdf_docs= pdf.load()
 dloader= DirectoryLoader("docs",glob="*.txt", loader_cls=TextLoader, loader_kwargs={'encoding':'utf-8'})
 documents=dloader.load()
 
-# print(documents)
+print(documents)
 print("Total number of documents loaded",len(documents))
 
 for doc in documents:
